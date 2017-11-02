@@ -17,8 +17,22 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func didTapAddPerson(_ sender: Any) {
+    @IBAction func didTapAddPerson(_ sender: UIButton) {
+        let popController = storyboard?.instantiateViewController(withIdentifier: "PersonViewController") as! PersonViewController
+        popController.modalPresentationStyle = .popover
+        popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
+        popController.popoverPresentationController?.delegate = self
+        popController.preferredContentSize = CGSize(width: 300, height: 200)
+        popController.popoverPresentationController?.sourceView = sender
+        popController.popoverPresentationController?.sourceRect = sender.bounds
         
+        self.present(popController, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
     }
 }
 

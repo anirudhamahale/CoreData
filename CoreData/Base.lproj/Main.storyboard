@@ -42,10 +42,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="CoreData Demo" id="4wa-pE-PuL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="h3v-rX-CY3">
-                            <connections>
-                                <action selector="didTapAddPerson:" destination="BYZ-38-t0r" id="Gt1-Xl-ZDf"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="lZX-Bk-pIp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PA8-gk-GPT">
+                                <rect key="frame" x="329" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="didTapAddPerson:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pi9-yC-arJ"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -55,6 +60,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Person View Controller-->
+        <scene sceneID="SD7-eh-m9X">
+            <objects>
+                <viewController storyboardIdentifier="PersonViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0dl-Aq-scW" customClass="PersonViewController" customModule="CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1vp-Pu-der">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8z1-s9-k6e">
+                                <rect key="frame" x="20" y="258.5" width="335" height="150"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfi-FV-etZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SvF-wh-nCn">
+                                        <rect key="frame" x="0.0" y="40" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Profession" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59F-lK-qrd">
+                                        <rect key="frame" x="0.0" y="80" width="335" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvC-U1-V7R">
+                                        <rect key="frame" x="0.0" y="120" width="335" height="30"/>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="didTapAdd:" destination="0dl-Aq-scW" eventType="touchUpInside" id="KWd-jN-2vH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8z1-s9-k6e" firstAttribute="centerY" secondItem="1vp-Pu-der" secondAttribute="centerY" id="TSO-Dp-dCO"/>
+                            <constraint firstItem="8z1-s9-k6e" firstAttribute="leading" secondItem="Ors-Me-2Mj" secondAttribute="leading" constant="20" id="WFJ-kU-O35"/>
+                            <constraint firstItem="8z1-s9-k6e" firstAttribute="centerX" secondItem="1vp-Pu-der" secondAttribute="centerX" id="ZuB-rS-uJg"/>
+                            <constraint firstItem="Ors-Me-2Mj" firstAttribute="trailing" secondItem="8z1-s9-k6e" secondAttribute="trailing" constant="20" id="hwf-TA-elj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ors-Me-2Mj"/>
+                    </view>
+                    <connections>
+                        <outlet property="ageTextField" destination="SvF-wh-nCn" id="wmb-f3-iC7"/>
+                        <outlet property="nameTextField" destination="cfi-FV-etZ" id="1YK-CA-wZw"/>
+                        <outlet property="professionTextField" destination="59F-lK-qrd" id="De6-wr-PKW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DFv-JV-Y6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zDh-RO-b9o">
