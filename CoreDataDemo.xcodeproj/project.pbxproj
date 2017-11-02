@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8F64DF551FAAF62800C66CF7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF541FAAF62800C66CF7 /* CoreDataStack.swift */; };
 		8F64DF581FAAF66400C66CF7 /* PeronsModal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF561FAAF66400C66CF7 /* PeronsModal.xcdatamodeld */; };
+		8F64DF5D1FAAF7DE00C66CF7 /* PersonCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF5C1FAAF7DE00C66CF7 /* PersonCoreData.swift */; };
+		8F64DF5F1FAAFC4200C66CF7 /* CONFIG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF5E1FAAFC4200C66CF7 /* CONFIG.swift */; };
 		8FB96DFF1FAAE4E800FB112B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB96DFE1FAAE4E800FB112B /* AppDelegate.swift */; };
 		8FB96E011FAAE4E800FB112B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB96E001FAAE4E800FB112B /* ViewController.swift */; };
 		8FB96E041FAAE4E800FB112B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FB96E021FAAE4E800FB112B /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		8F64DF541FAAF62800C66CF7 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8F64DF571FAAF66400C66CF7 /* PeronsModal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PeronsModal.xcdatamodel; sourceTree = "<group>"; };
+		8F64DF5C1FAAF7DE00C66CF7 /* PersonCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCoreData.swift; sourceTree = "<group>"; };
+		8F64DF5E1FAAFC4200C66CF7 /* CONFIG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONFIG.swift; sourceTree = "<group>"; };
 		8FB96DFB1FAAE4E800FB112B /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB96DFE1FAAE4E800FB112B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FB96E001FAAE4E800FB112B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				8FB96E121FAAE79300FB112B /* Struct.swift */,
+				8F64DF5C1FAAF7DE00C66CF7 /* PersonCoreData.swift */,
 				8F64DF561FAAF66400C66CF7 /* PeronsModal.xcdatamodeld */,
 				8F64DF541FAAF62800C66CF7 /* CoreDataStack.swift */,
 			);
@@ -59,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				8FB96E051FAAE4E800FB112B /* Assets.xcassets */,
+				8F64DF5E1FAAFC4200C66CF7 /* CONFIG.swift */,
 				8FB96E0A1FAAE4E800FB112B /* Info.plist */,
 			);
 			name = "Supporting files";
@@ -176,7 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FB96E151FAAE81B00FB112B /* PersonViewController.swift in Sources */,
+				8F64DF5D1FAAF7DE00C66CF7 /* PersonCoreData.swift in Sources */,
 				8FB96E131FAAE79300FB112B /* Struct.swift in Sources */,
+				8F64DF5F1FAAFC4200C66CF7 /* CONFIG.swift in Sources */,
 				8FB96E111FAAE5EF00FB112B /* PersonTableViewCell.swift in Sources */,
 				8F64DF551FAAF62800C66CF7 /* CoreDataStack.swift in Sources */,
 				8F64DF581FAAF66400C66CF7 /* PeronsModal.xcdatamodeld in Sources */,
