@@ -7,5 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+

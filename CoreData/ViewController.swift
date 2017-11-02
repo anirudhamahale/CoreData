@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -17,11 +18,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if let persons = Person.getPersons() {
-            people = persons
-            print(people)
+        configureRefreshControl()
+        
+        if let results = PersonCoreData.shared.getPersons() {
+            people = results
             tableView.reloadData()
         }
+    }
+    
+    private func configureRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(self.didStartRefresh(sender:)), for: .valueChanged)
+    }
+    
+    
+    @objc func didStartRefresh(sender: UIRefreshControl) {
+        if let temp = PersonCoreData.shared.getPersons() {
+            people = temp
+            tableView.reloadData()
+        }
+        sender.endRefreshing()
     }
     
     @IBAction func didTapAddPerson(_ sender: UIButton) {
@@ -29,7 +46,7 @@ class ViewController: UIViewController {
         popController.modalPresentationStyle = .popover
         popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
         popController.popoverPresentationController?.delegate = self
-        popController.preferredContentSize = CGSize(width: 300, height: 200)
+        popController.preferredContentSize = CGSize(width: 300, height: 150)
         popController.popoverPresentationController?.sourceView = sender
         popController.popoverPresentationController?.sourceRect = sender.bounds
         
@@ -44,7 +61,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = people[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.profession
         return cell
@@ -57,7 +74,7 @@ extension ViewController: UIPopoverPresentationControllerDelegate {
     }
     
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
-        if let persons = Person.getPersons() {
+        if let persons = PersonCoreData.shared.getPersons() {
             people = persons
             tableView.reloadData()
         }

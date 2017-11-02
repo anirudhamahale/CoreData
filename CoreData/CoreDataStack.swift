@@ -15,6 +15,7 @@ class CoreDataStack {
     // 2. URL to application's Document Directory
     lazy var applicationDocumentDirectory: URL = {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(urls)
         return urls[urls.count - 1]
     }()
     

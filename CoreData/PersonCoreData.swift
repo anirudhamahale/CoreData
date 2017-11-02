@@ -9,24 +9,40 @@
 import Foundation
 import CoreData
 
-let context = appDelegate.managedObjectContext
-
-extension Person {
-    static let entityName = "Person"
+class PersonCoreData {
+    /// Context
+    let context = appDelegate.managedObjectContext!
     
-     static func getPersons() -> [Person_]? {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        var returnValue: [Person_]?
+    /// instance of DublCoreData Class
+    static let shared = PersonCoreData()
+    
+    // save changes
+    func saveChanges() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getPersons() -> [Person_]? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        let entity = NSEntityDescription.entity(forEntityName: "Person", in: context)
+        fetchRequest.entity = entity
+        var returnValue = [Person_]()
         do {
             let result = try context.fetch(fetchRequest)
             if let persons = result as? [Person] {
                 for item in persons {
                     let name = item.name ?? ""
-                    let age = item.age ?? ""
                     let profession = item.profession ?? ""
                     
-                    returnValue?.append(Person_(name: name, age: age, profession: profession))
+                    returnValue.append(Person_(name: name, profession: profession))
                 }
+            } else {
+                print("Can't convert result as [Person]")
             }
         } catch {
             print(error.localizedDescription)
@@ -34,20 +50,13 @@ extension Person {
         return returnValue
     }
     
-    static func addPerson(_ item: Person_, completion: ()->()) {
-        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
-        if let person = NSManagedObject(entity: entity!, insertInto: context) as? Person {
-            person.name = item.age
-            person.profession = item.profession
-            person.age = item.age
-            
-            do {
-                try context.save()
-            } catch {
-                print("Failed to insert person record.")
-                print(error.localizedDescription)
-            }
-        }
+    func insert(_ item: Person_, completion: ()->()) {
+        let entity = NSEntityDescription.entity(forEntityName: "Person", in: context)
+        let person = NSManagedObject(entity: entity!, insertInto: context) as! Person
+        person.name = item.name
+        person.profession = item.profession
+        saveChanges()
+        
         completion()
     }
 }

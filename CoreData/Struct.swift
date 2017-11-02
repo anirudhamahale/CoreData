@@ -10,6 +10,5 @@ import Foundation
 
 struct Person_ {
     let name: String
-    let age: String
     let profession: String
 }

@@ -90,28 +90,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8z1-s9-k6e">
-                                <rect key="frame" x="20" y="258.5" width="335" height="150"/>
+                                <rect key="frame" x="20" y="278.5" width="335" height="110"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfi-FV-etZ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Anirudha" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfi-FV-etZ">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SvF-wh-nCn">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="iOS Developer" borderStyle="roundedRect" placeholder="Profession" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59F-lK-qrd">
                                         <rect key="frame" x="0.0" y="40" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Profession" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59F-lK-qrd">
-                                        <rect key="frame" x="0.0" y="80" width="335" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvC-U1-V7R">
-                                        <rect key="frame" x="0.0" y="120" width="335" height="30"/>
+                                        <rect key="frame" x="0.0" y="80" width="335" height="30"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
                                             <action selector="didTapAdd:" destination="0dl-Aq-scW" eventType="touchUpInside" id="KWd-jN-2vH"/>
@@ -130,7 +124,6 @@
                         <viewLayoutGuide key="safeArea" id="Ors-Me-2Mj"/>
                     </view>
                     <connections>
-                        <outlet property="ageTextField" destination="SvF-wh-nCn" id="wmb-f3-iC7"/>
                         <outlet property="nameTextField" destination="cfi-FV-etZ" id="1YK-CA-wZw"/>
                         <outlet property="professionTextField" destination="59F-lK-qrd" id="De6-wr-PKW"/>
                     </connections>
