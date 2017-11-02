@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F64DF551FAAF62800C66CF7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF541FAAF62800C66CF7 /* CoreDataStack.swift */; };
+		8F64DF581FAAF66400C66CF7 /* PeronsModal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF561FAAF66400C66CF7 /* PeronsModal.xcdatamodeld */; };
 		8FB96DFF1FAAE4E800FB112B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB96DFE1FAAE4E800FB112B /* AppDelegate.swift */; };
 		8FB96E011FAAE4E800FB112B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB96E001FAAE4E800FB112B /* ViewController.swift */; };
 		8FB96E041FAAE4E800FB112B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FB96E021FAAE4E800FB112B /* Main.storyboard */; };
@@ -18,7 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8FB96DFB1FAAE4E800FB112B /* CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F64DF541FAAF62800C66CF7 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		8F64DF571FAAF66400C66CF7 /* PeronsModal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PeronsModal.xcdatamodel; sourceTree = "<group>"; };
+		8FB96DFB1FAAE4E800FB112B /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB96DFE1FAAE4E800FB112B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FB96E001FAAE4E800FB112B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8FB96E031FAAE4E800FB112B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +45,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F64DF591FAAF6AA00C66CF7 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				8FB96E121FAAE79300FB112B /* Struct.swift */,
+				8F64DF561FAAF66400C66CF7 /* PeronsModal.xcdatamodeld */,
+				8F64DF541FAAF62800C66CF7 /* CoreDataStack.swift */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		8F64DF5A1FAAF6BC00C66CF7 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				8FB96E051FAAE4E800FB112B /* Assets.xcassets */,
+				8FB96E0A1FAAE4E800FB112B /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		8F64DF5B1FAAF6E500C66CF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8FB96E021FAAE4E800FB112B /* Main.storyboard */,
+				8FB96E071FAAE4E800FB112B /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		8FB96DF21FAAE4E800FB112B = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +84,7 @@
 		8FB96DFC1FAAE4E800FB112B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8FB96DFB1FAAE4E800FB112B /* CoreData.app */,
+				8FB96DFB1FAAE4E800FB112B /* CoreDataDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,13 +94,11 @@
 			children = (
 				8FB96DFE1FAAE4E800FB112B /* AppDelegate.swift */,
 				8FB96E001FAAE4E800FB112B /* ViewController.swift */,
-				8FB96E141FAAE81B00FB112B /* PersonViewController.swift */,
-				8FB96E121FAAE79300FB112B /* Struct.swift */,
-				8FB96E021FAAE4E800FB112B /* Main.storyboard */,
 				8FB96E101FAAE5EF00FB112B /* PersonTableViewCell.swift */,
-				8FB96E051FAAE4E800FB112B /* Assets.xcassets */,
-				8FB96E071FAAE4E800FB112B /* LaunchScreen.storyboard */,
-				8FB96E0A1FAAE4E800FB112B /* Info.plist */,
+				8FB96E141FAAE81B00FB112B /* PersonViewController.swift */,
+				8F64DF5B1FAAF6E500C66CF7 /* Views */,
+				8F64DF5A1FAAF6BC00C66CF7 /* Supporting files */,
+				8F64DF591FAAF6AA00C66CF7 /* Modal */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -76,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8FB96DFA1FAAE4E800FB112B /* CoreData */ = {
+		8FB96DFA1FAAE4E800FB112B /* CoreDataDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8FB96E0D1FAAE4E800FB112B /* Build configuration list for PBXNativeTarget "CoreData" */;
+			buildConfigurationList = 8FB96E0D1FAAE4E800FB112B /* Build configuration list for PBXNativeTarget "CoreDataDemo" */;
 			buildPhases = (
 				8FB96DF71FAAE4E800FB112B /* Sources */,
 				8FB96DF81FAAE4E800FB112B /* Frameworks */,
@@ -88,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = CoreData;
+			name = CoreDataDemo;
 			productName = CoreData;
-			productReference = 8FB96DFB1FAAE4E800FB112B /* CoreData.app */;
+			productReference = 8FB96DFB1FAAE4E800FB112B /* CoreDataDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -109,7 +139,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8FB96DF61FAAE4E800FB112B /* Build configuration list for PBXProject "CoreData" */;
+			buildConfigurationList = 8FB96DF61FAAE4E800FB112B /* Build configuration list for PBXProject "CoreDataDemo" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -122,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8FB96DFA1FAAE4E800FB112B /* CoreData */,
+				8FB96DFA1FAAE4E800FB112B /* CoreDataDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +178,8 @@
 				8FB96E151FAAE81B00FB112B /* PersonViewController.swift in Sources */,
 				8FB96E131FAAE79300FB112B /* Struct.swift in Sources */,
 				8FB96E111FAAE5EF00FB112B /* PersonTableViewCell.swift in Sources */,
+				8F64DF551FAAF62800C66CF7 /* CoreDataStack.swift in Sources */,
+				8F64DF581FAAF66400C66CF7 /* PeronsModal.xcdatamodeld in Sources */,
 				8FB96E011FAAE4E800FB112B /* ViewController.swift in Sources */,
 				8FB96DFF1FAAE4E800FB112B /* AppDelegate.swift in Sources */,
 			);
@@ -313,7 +345,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8FB96DF61FAAE4E800FB112B /* Build configuration list for PBXProject "CoreData" */ = {
+		8FB96DF61FAAE4E800FB112B /* Build configuration list for PBXProject "CoreDataDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8FB96E0B1FAAE4E800FB112B /* Debug */,
@@ -322,7 +354,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8FB96E0D1FAAE4E800FB112B /* Build configuration list for PBXNativeTarget "CoreData" */ = {
+		8FB96E0D1FAAE4E800FB112B /* Build configuration list for PBXNativeTarget "CoreDataDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8FB96E0E1FAAE4E800FB112B /* Debug */,
@@ -332,6 +364,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8F64DF561FAAF66400C66CF7 /* PeronsModal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8F64DF571FAAF66400C66CF7 /* PeronsModal.xcdatamodel */,
+			);
+			currentVersion = 8F64DF571FAAF66400C66CF7 /* PeronsModal.xcdatamodel */;
+			path = PeronsModal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8FB96DF31FAAE4E800FB112B /* Project object */;
 }

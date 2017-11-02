@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Person {
+struct Person_ {
     let name: String
     let age: String
     let profession: String
