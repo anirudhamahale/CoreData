@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         let popController = storyboard?.instantiateViewController(withIdentifier: "PersonViewController") as! PersonViewController
         popController.modalPresentationStyle = .popover
         popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
+        popController.delegate = self
         popController.popoverPresentationController?.delegate = self
         popController.preferredContentSize = CGSize(width: 300, height: 150)
         popController.popoverPresentationController?.sourceView = sender
@@ -72,8 +73,10 @@ extension ViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none
     }
-    
-    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+}
+
+extension ViewController: PersonViewControllerDelegate {
+    func didInsertRecord() {
         if let persons = PersonCoreData.shared.getPersons() {
             people = persons
             tableView.reloadData()
