@@ -45,6 +45,7 @@ extension Person {
                 try context.save()
             } catch {
                 print("Failed to insert person record.")
+                print(error.localizedDescription)
             }
         }
         completion()
