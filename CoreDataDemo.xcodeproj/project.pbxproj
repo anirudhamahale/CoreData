@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F64DF551FAAF62800C66CF7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF541FAAF62800C66CF7 /* CoreDataStack.swift */; };
-		8F64DF581FAAF66400C66CF7 /* PeronsModal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF561FAAF66400C66CF7 /* PeronsModal.xcdatamodeld */; };
+		8F64DF581FAAF66400C66CF7 /* PersonModal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF561FAAF66400C66CF7 /* PersonModal.xcdatamodeld */; };
 		8F64DF5D1FAAF7DE00C66CF7 /* PersonCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF5C1FAAF7DE00C66CF7 /* PersonCoreData.swift */; };
 		8F64DF5F1FAAFC4200C66CF7 /* CONFIG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F64DF5E1FAAFC4200C66CF7 /* CONFIG.swift */; };
 		8FB96DFF1FAAE4E800FB112B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB96DFE1FAAE4E800FB112B /* AppDelegate.swift */; };
@@ -54,7 +54,7 @@
 			children = (
 				8FB96E121FAAE79300FB112B /* Struct.swift */,
 				8F64DF5C1FAAF7DE00C66CF7 /* PersonCoreData.swift */,
-				8F64DF561FAAF66400C66CF7 /* PeronsModal.xcdatamodeld */,
+				8F64DF561FAAF66400C66CF7 /* PersonModal.xcdatamodeld */,
 				8F64DF541FAAF62800C66CF7 /* CoreDataStack.swift */,
 			);
 			name = Modal;
@@ -187,7 +187,7 @@
 				8F64DF5F1FAAFC4200C66CF7 /* CONFIG.swift in Sources */,
 				8FB96E111FAAE5EF00FB112B /* PersonTableViewCell.swift in Sources */,
 				8F64DF551FAAF62800C66CF7 /* CoreDataStack.swift in Sources */,
-				8F64DF581FAAF66400C66CF7 /* PeronsModal.xcdatamodeld in Sources */,
+				8F64DF581FAAF66400C66CF7 /* PersonModal.xcdatamodeld in Sources */,
 				8FB96E011FAAE4E800FB112B /* ViewController.swift in Sources */,
 				8FB96DFF1FAAE4E800FB112B /* AppDelegate.swift in Sources */,
 			);
@@ -374,13 +374,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8F64DF561FAAF66400C66CF7 /* PeronsModal.xcdatamodeld */ = {
+		8F64DF561FAAF66400C66CF7 /* PersonModal.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				8F64DF571FAAF66400C66CF7 /* PeronsModal.xcdatamodel */,
 			);
 			currentVersion = 8F64DF571FAAF66400C66CF7 /* PeronsModal.xcdatamodel */;
-			path = PeronsModal.xcdatamodeld;
+			path = PersonModal.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

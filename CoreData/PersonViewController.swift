@@ -21,6 +21,9 @@ class PersonViewController: UIViewController {
     }
 
     @IBAction func didTapAdd(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let item = Person_(name: nameTextField.text!, age: ageTextField.text!, profession: professionTextField.text!)
+        Person.addPerson(item) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

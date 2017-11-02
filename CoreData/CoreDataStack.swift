@@ -10,7 +10,7 @@ import CoreData
 
 class CoreDataStack {
     // 1. variable holding model name
-    let modelName = "PeronsModal"
+    let modelName = "PersonModal"
     
     // 2. URL to application's Document Directory
     lazy var applicationDocumentDirectory: URL = {

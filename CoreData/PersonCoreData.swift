@@ -12,8 +12,10 @@ import CoreData
 let context = appDelegate.managedObjectContext
 
 extension Person {
+    static let entityName = "Person"
+    
      static func getPersons() -> [Person_]? {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         var returnValue: [Person_]?
         do {
             let result = try context.fetch(fetchRequest)
@@ -31,4 +33,31 @@ extension Person {
         }
         return returnValue
     }
+    
+    static func addPerson(_ item: Person_, completion: ()->()) {
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+        if let person = NSManagedObject(entity: entity!, insertInto: context) as? Person {
+            person.name = item.age
+            person.profession = item.profession
+            person.age = item.age
+            
+            do {
+                try context.save()
+            } catch {
+                print("Failed to insert person record.")
+            }
+        }
+        completion()
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
