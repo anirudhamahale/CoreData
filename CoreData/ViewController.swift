@@ -34,11 +34,15 @@ class ViewController: UIViewController {
     
     
     @objc func didStartRefresh(sender: UIRefreshControl) {
+        reloadData()
+        sender.endRefreshing()
+    }
+    
+    func reloadData() {
         if let temp = PersonCoreData.shared.getPersons() {
             people = temp
             tableView.reloadData()
         }
-        sender.endRefreshing()
     }
     
     @IBAction func didTapAddPerson(_ sender: UIButton) {
@@ -55,9 +59,13 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return people.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,6 +74,18 @@ extension ViewController: UITableViewDataSource {
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.profession
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let name = people[indexPath.row].name
+            PersonCoreData.shared.delete(name)
+            reloadData()
+        }
     }
 }
 

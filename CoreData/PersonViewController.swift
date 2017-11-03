@@ -12,7 +12,6 @@ protocol PersonViewControllerDelegate: class {
     func didInsertRecord()
 }
 
-
 class PersonViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!

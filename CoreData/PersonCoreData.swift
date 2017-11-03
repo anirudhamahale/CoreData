@@ -59,9 +59,24 @@ class PersonCoreData {
         
         completion()
     }
+    
+    func delete(_ name: String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", name)
+        
+        do {
+            let result = try self.context.fetch(fetchRequest)
+            if result.count > 0 {
+                let noti = result[0]
+                self.context.delete(noti as! NSManagedObject)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        saveChanges()
+    }
 }
-
-
 
 
 
