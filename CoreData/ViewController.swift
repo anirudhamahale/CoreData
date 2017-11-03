@@ -46,16 +46,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapAddPerson(_ sender: UIButton) {
+        let vc = configurePopOver()
+        vc.popoverPresentationController?.sourceView = sender
+        vc.popoverPresentationController?.sourceRect = sender.bounds
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func configurePopOver() -> PersonViewController {
         let popController = storyboard?.instantiateViewController(withIdentifier: "PersonViewController") as! PersonViewController
         popController.modalPresentationStyle = .popover
         popController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.up
         popController.delegate = self
         popController.popoverPresentationController?.delegate = self
         popController.preferredContentSize = CGSize(width: 300, height: 150)
-        popController.popoverPresentationController?.sourceView = sender
-        popController.popoverPresentationController?.sourceRect = sender.bounds
-        
-        self.present(popController, animated: true, completion: nil)
+        //popController.popoverPresentationController?.sourceView = sender
+        //popController.popoverPresentationController?.sourceRect = sender.bounds
+        return popController
     }
 }
 
@@ -65,6 +71,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = configurePopOver()
+        vc.person = people[indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath)
+        vc.popoverPresentationController?.sourceView = cell
+        vc.popoverPresentationController?.sourceRect = cell!.bounds
+        self.present(vc, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

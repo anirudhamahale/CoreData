@@ -19,10 +19,15 @@ class PersonViewController: UIViewController {
     
     var delegate: PersonViewControllerDelegate?
     
+    var person: Person_?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let person = person {
+            nameTextField.text = person.name
+            professionTextField.text = person.profession
+        }
     }
 
     @IBAction func didTapAdd(_ sender: Any) {
